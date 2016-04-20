@@ -20,4 +20,17 @@ def hex(a_string):
     print(a_string)
     return re.match(p, a_string)
 
-print(hex("CAFE"))
+def word(a_string):
+    if not a_string.isdigit():
+        p = re.compile(r'^[\w-]+[a-zA-Z]+$')
+        return re.match(p, a_string)
+    else:
+        return False
+
+def words(a_string, count=None):
+    x = re.findall(r'[\w-]+[a-zA-Z]+', a_string)
+    print(x)
+    if count is not None:
+        return len(x) == count
+    else:
+        return len(x) > 0

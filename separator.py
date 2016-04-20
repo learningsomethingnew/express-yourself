@@ -2,7 +2,9 @@ import re
 
 def words(a_string):
     p = re.compile(r'\S\w*\S\w+')
-    return re.findall(p,a_string)
+    x = re.findall(p,a_string)
+    print(x)
+    return x
 
 def phone_number(a_string):
     if len(a_string) > 9:
